@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | TravelX</title>
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    .page-nav {
+      background: #7c828f;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .page-nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .page-nav a:hover {
+      color: #f1c40f;
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .contact-container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-container h2 {
+      color: #0044cc;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .cta-btn {
+      background: #ff4d00;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #003399;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .contact-info h3 {
+      color: #ff4d00;
+    }
+
+    .contact-info i {
+      color: #ff4d00;
+      margin-right: 8px;
+    }
+
+    /* Google Maps */
+    .map-container {
+      margin-top: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    /* FAQ Section */
+    .faq-container {
+      margin-top: 50px;
+      max-width: 800px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .faq-container h2 {
+      color: #ff4d00;
+    }
+
+    .faq {
+      background: white;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .faq h3 {
+      font-size: 16px;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq p {
+      font-size: 14px;
+      display: none;
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    #main-footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    .footer-nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer-nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="page-nav">
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="packages.html">Packages</a>
+      <a href="about.html">About Us</a>
+      <a href="blog.html">Blog</a>
+  </nav>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <p>Have questions or need assistance? Fill out the form below and we’ll get back to you shortly.</p>
+
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="name"><i class="fas fa-user"></i> Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <label for="message"><i class="fas fa-comment"></i> Message</label>
+          <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="cta-btn">Send Message</button>
+      </form>
+
+      <div class="contact-info">
+        <h3>Our Office</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Travel St, City, Country</p>
+        <p><i class="fas fa-envelope"></i> info@travelx.com</p>
+        <p><i class="fas fa-phone"></i> +123 456 7890</p>
+      </div>
+
+      <!-- Google Maps -->
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345086183!2d144.9537353153167!3d-37.8162797797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5df1f7f6b3%3A0x7b7e6e5e4a646df!2sMelbourne%20CBD!5e0!3m2!1sen!2sau!4v1632991234567"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div class="footer-nav">
+      <a href="index.html">Home</a> |
+      <a href="destinations.html">Destinations</a> |
+      <a href="packages.html">Packages</a> |
+      <a href="about.html">About Us</a> |
+      <a href="blog.html">Blog</a>
+    </div>
+    <p>&copy; 2025 TravelX. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

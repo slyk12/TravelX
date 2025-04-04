@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Testimonials | TravelX</title>
+  <style>
+    :root {
+      font-size: 16px; /* Base size for rem calculations */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .page-nav {
+      text-align: center;
+      padding: 1rem 0;
+      background: #f0f0f0;
+      font-size: 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .page-nav a {
+      color: #333;
+      margin: 0 0.8rem;
+    }
+
+    .page-nav a:hover {
+      color: #ff7b00;
+    }
+
+    #testimonials {
+      background-color: #f9f9f9;
+      padding: 5rem 1.25rem 3rem;
+      text-align: center;
+      margin-top: 4.5rem;
+    }
+
+    #testimonials h2 {
+      font-size: 2.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    #testimonials p {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+
+    .testimonials-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+      padding: 0 1rem;
+    }
+
+    .testimonial-card {
+      background-color: #fff;
+      padding: 1.25rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .testimonial-card:hover {
+      transform: scale(1.03);
+    }
+
+    .testimonial-image {
+      width: 6.25rem;
+      height: 6.25rem;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-name {
+      font-size: 1.375rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+
+    .testimonial-text {
+      font-size: 1.125rem;
+      font-style: italic;
+      color: #777;
+    }
+
+    #main-footer {
+      background: #222;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .footer-nav {
+      margin-bottom: 0.625rem;
+      font-size: 1rem;
+    }
+
+    .footer-nav a {
+      color: #ff7b00;
+      margin: 0 0.5rem;
+    }
+
+    .footer-nav a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      #testimonials h2 {
+        font-size: 1.75rem;
+      }
+
+      #testimonials p {
+        font-size: 1rem;
+      }
+
+      .testimonial-name {
+        font-size: 1.25rem;
+      }
+
+      .testimonial-text {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="page-nav">
+    <a href="index.html">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="packages.html">Packages</a>
+    <a href="about.html">About Us</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+
+  <section id="testimonials">
+    <h2>What Our Customers Say</h2>
+    <p>We are committed to providing the best travel experiences. Here’s what some of our customers have shared about their adventures with us:</p>
+    <div class="testimonials-container">
+      <!-- Example Testimonial -->
+      <div class="testimonial-card">
+        <img src="path_to_image1.jpg" alt="Customer 1" class="testimonial-image" />
+        <h3 class="testimonial-name">Sarah J.</h3>
+        <p class="testimonial-text">"Best vacation ever! The trip was well-organized and unforgettable!"</p>
+      </div>
+      <!-- Testimonial 2 -->
+    <div class="testimonial-card">
+        <img src="path_to_image2.jpg" alt="Customer 2" class="testimonial-image">
+        <h3 class="testimonial-name">Michael T.</h3>
+        <p class="testimonial-text">"The Maldives package was fantastic! Beautiful beaches and seamless service."</p>
+    </div>
+    <!-- Testimonial 3 -->
+    <div class="testimonial-card">
+        <img src="path_to_image3.jpg" alt="Customer 3" class="testimonial-image">
+        <h3 class="testimonial-name">Jessica R.</h3>
+        <p class="testimonial-text">"The guided tour was amazing. Our tour guide was very knowledgeable, and the sights were breathtaking!"</p>
+    </div>
+    <!-- Testimonial 4 -->
+    <div class="testimonial-card">
+        <img src="path_to_image4.jpg" alt="Customer 4" class="testimonial-image">
+        <h3 class="testimonial-name">John D.</h3>
+        <p class="testimonial-text">"A fantastic experience! I would highly recommend TravelX to anyone looking for an adventure."</p>
+    </div>
+    <!-- Testimonial 5 -->
+    <div class="testimonial-card">
+        <img src="path_to_image5.jpg" alt="Customer 5" class="testimonial-image">
+        <h3 class="testimonial-name">Emily S.</h3>
+        <p class="testimonial-text">"Everything was perfect, from the booking process to the last day of our vacation. We’ll definitely book again!"</p>
+    </div>
+    <!-- Testimonial 6 -->
+    <div class="testimonial-card">
+        <img src="path_to_image6.jpg" alt="Customer 6" class="testimonial-image">
+        <h3 class="testimonial-name">Daniel M.</h3>
+        <p class="testimonial-text">"The trip was well organized, and the travel agents were very helpful in answering all our questions."</p>
+    </div>
+    <!-- Testimonial 7 -->
+    <div class="testimonial-card">
+        <img src="path_to_image7.jpg" alt="Customer 7" class="testimonial-image">
+        <h3 class="testimonial-name">Anna B.</h3>
+        <p class="testimonial-text">"It was an amazing experience, and everything exceeded our expectations. Thank you, TravelX!"</p>
+    </div>
+    <!-- Testimonial 8 -->
+    <div class="testimonial-card">
+        <img src="path_to_image8.jpg" alt="Customer 8" class="testimonial-image">
+        <h3 class="testimonial-name">Paul W.</h3>
+        <p class="testimonial-text">"A wonderful trip with everything taken care of. Couldn’t ask for a better vacation experience."</p>
+    </div>
+    <!-- Testimonial 9 -->
+    <div class="testimonial-card">
+        <img src="path_to_image9.jpg" alt="Customer 9" class="testimonial-image">
+        <h3 class="testimonial-name">Olivia K.</h3>
+        <p class="testimonial-text">"The team at TravelX really knows how to create an unforgettable experience. We had a blast!"</p>
+    </div>
+    <!-- Testimonial 10 -->
+    <div class="testimonial-card">
+        <img src="path_to_image10.jpg" alt="Customer 10" class="testimonial-image">
+        <h3 class="testimonial-name">David H.</h3>
+        <p class="testimonial-text">"From booking to return, it was a smooth and well-managed experience. Highly recommended!"</p>
+    </div>
+      <!-- Add more testimonials as needed, keeping the same structure -->
+    </div>
+  </section>
+
+  <footer id="main-footer">
+    <div class="footer-nav">
+      <a href="index.html">Home</a> |
+      <a href="destinations.html">Destinations</a> |
+      <a href="packages.html">Packages</a> |
+      <a href="about.html">About Us</a> |
+      <a href="blog.html">Blog</a>
+    </div>
+    <p>&copy; 2025 TravelX. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

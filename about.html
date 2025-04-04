@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | TravelX</title>
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.75rem;
+      font-weight: bold;
+    }
+
+    .logo a {
+      color: white;
+    }
+
+    .nav-links ul {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 1.5rem;
+    }
+
+    .nav-links a {
+      color: white;
+      font-size: 1.125rem;
+      padding-bottom: 0.25rem;
+    }
+
+    .nav-links a.active {
+      border-bottom: 2px solid #ff7b00;
+    }
+
+    /* About Us Section */
+    #about-us {
+      padding: 6.5rem 1.25rem 3rem;
+      background-color: #ffffff;
+    }
+
+    .about-container {
+      max-width: 75rem;
+      margin: 0 auto;
+      padding: 1.25rem;
+    }
+
+    #about-us h2 {
+      text-align: center;
+      font-size: 2.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    #about-us p {
+      font-size: 1.125rem;
+      margin-bottom: 1.875rem;
+      line-height: 1.8;
+    }
+
+    /* Team Section */
+    .team {
+      margin-top: 3rem;
+    }
+
+    .team h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.875rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .team-member {
+      text-align: center;
+      flex: 1 1 calc(33.333% - 1.875rem);
+      max-width: calc(33.333% - 1.875rem);
+      box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+      background-color: #fff;
+      border-radius: 0.625rem;
+      overflow: hidden;
+      padding: 1rem;
+    }
+
+    .team-member:hover {
+      transform: scale(1.05);
+    }
+
+    .team-member img {
+      width: 100%;
+      height: 15.625rem;
+      object-fit: cover;
+      border-radius: 0.625rem;
+      margin-bottom: 1rem;
+    }
+
+    .team-member h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-member p {
+      font-size: 1.125rem;
+    }
+
+    @media (max-width: 768px) {
+      .team-member {
+        flex: 1 1 calc(50% - 1.25rem);
+        max-width: calc(50% - 1.25rem);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .team-member {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    }
+
+    /* Mission Section */
+    .mission {
+      background-color: #f9f9f9;
+      padding: 2.5rem 1rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .mission h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .mission p {
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+
+    /* Values Section */
+    .values {
+      margin-top: 2.5rem;
+      padding: 2.5rem 1rem;
+    }
+
+    .values h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+
+    .values ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .values li {
+      font-size: 1.125rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Footer */
+    #main-footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1.25rem;
+    }
+
+    .footer-nav a {
+      color: white;
+      margin: 0 0.625rem;
+      font-size: 1rem;
+    }
+
+    .footer-nav a:hover {
+      color: #ff7b00;
+    }
+
+    #main-footer p {
+      margin-top: 0.625rem;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <header id="main-header">
+    <div class="container">
+      <h1 class="logo"><a href="home.html">TravelX</a></h1>
+      <nav class="nav-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="about-us">
+    <div class="about-container">
+      <h2>About Us</h2>
+      <p>At TravelX, we are passionate about helping you discover the beauty and wonders of Uganda and beyond. Based in the heart of Uganda, we specialize in providing unforgettable travel experiences. Our goal is to make your journey as smooth, enjoyable, and memorable as possible.</p>
+
+      <div class="team">
+        <h3>Meet the Team</h3>
+        <div class="team-members">
+          <div class="team-member">
+            <img src="pictures/Annet.jpg" alt="Annet T - Founder and CEO" />
+            <h4>Annet. T</h4>
+            <p>Founder & CEO</p>
+            <p>With over 10 years of experience in the travel industry, Annet leads our team with a passion for providing unique travel experiences.</p>
+          </div>
+          <div class="team-member">
+            <img src="pictures/Nabulya.jpg" alt="Immaculate N - Operations Manager" />
+            <h4>Immaculate. N</h4>
+            <p>Operations Manager</p>
+            <p>Immaculate ensures that all our trips run smoothly and that our clients receive top-notch service every step of the way.</p>
+          </div>
+          <div class="team-member">
+            <img src="pictures/Veronica.jpg" alt="Veronica N - Customer Relations Manager" />
+            <h4>Veronica. N</h4>
+            <p>Customer Relations Manager</p>
+            <p>Veronica is always ready to assist our clients, ensuring that their needs are met and their experiences are stress-free.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mission">
+        <h3>Our Mission</h3>
+        <p>Our mission is to bring the best travel experiences to our clients by offering personalized services, discovering hidden gems, and promoting responsible tourism in Uganda. Whether you're seeking an adventurous safari in Queen Elizabeth National Park or a relaxing beach getaway at Lake Victoria, we ensure you experience the best of Uganda.</p>
+      </div>
+
+      <div class="values">
+        <h3>Our Values</h3>
+        <ul>
+          <li><strong>Integrity:</strong> We operate with honesty and transparency in all our dealings.</li>
+          <li><strong>Customer Focus:</strong> Our clients' satisfaction is our top priority.</li>
+          <li><strong>Innovation:</strong> We are always looking for new ways to enhance the travel experience.</li>
+          <li><strong>Respect for Nature:</strong> We promote eco-friendly travel and sustainable tourism practices.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer id="main-footer">
+    <div class="footer-nav">
+      <a href="index.html">Home</a> |
+      <a href="destinations.html">Destinations</a> |
+      <a href="packages.html">Packages</a> |
+      <a href="testimonials.html">Testimonials</a> |
+      <a href="about.html" class="active">About</a> |
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>&copy; 2025 TravelX. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

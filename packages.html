@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Packages | TravelX</title>
+  <style>
+    :root {
+      font-size: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Navigation Bar */
+    .page-nav {
+      text-align: center;
+      padding: 1rem 0;
+      background: #222;
+      font-size: 1.125rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      color: white;
+      z-index: 1000;
+    }
+
+    .page-nav a {
+      color: white;
+      margin: 0 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .page-nav a:hover {
+      color: #ff7b00;
+    }
+
+    /* Packages Section */
+    #packages {
+      padding: 5rem 1.25rem;
+      background-color: #f9f9f9;
+      text-align: center;
+      margin-top: 4.5rem;
+    }
+
+    #packages h2 {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    #packages p {
+      font-size: 1.125rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .packages-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+
+    .package {
+      width: 30%;
+      background: #fff;
+      border-radius: 0.625rem;
+      box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.1);
+      padding: 1.25rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .package:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.2);
+    }
+
+    .package img {
+      width: 100%;
+      height: 12.5rem;
+      object-fit: cover;
+      border-radius: 0.625rem;
+    }
+
+    .package h3 {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      color: #333;
+    }
+
+    .package p {
+      font-size: 1rem;
+      color: #555;
+      margin: 0.625rem 0;
+    }
+
+    .price {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #ff7b00;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      background-color: #ff7b00;
+      color: white;
+      font-size: 1.125rem;
+      font-weight: bold;
+      border-radius: 0.3125rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 0.5rem;
+    }
+
+    .cta-btn:hover {
+      background-color: #ff4d00;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    #main-footer {
+      background: #222;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .footer-nav {
+      font-size: 1rem;
+      margin-bottom: 0.625rem;
+    }
+
+    .footer-nav a {
+      color: #ff7b00;
+      text-decoration: none;
+      margin: 0 0.625rem;
+    }
+
+    .footer-nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .package {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .package {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="page-nav">
+    <a href="index.html">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="about.html">About Us</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <!-- Packages Section -->
+  <section id="packages">
+    <div class="container">
+      <div class="welcome">
+        <h2>Our Travel Packages</h2>
+        <p>Discover our best travel deals and packages. Choose the perfect trip for your next adventure!</p>
+      </div>
+
+      <div class="packages-container">
+        <!-- Package Cards -->
+        <!-- You can easily copy more of these if needed -->
+        <div class="package">
+          <img src="pictures/Sound of the City's - Paris.jpg" alt="Paris, France">
+          <h3>Romantic Paris</h3>
+          <p>Enjoy a 5-day luxurious stay in the city of love, including guided tours and fine dining.</p>
+          <p class="price">$1,200 per person</p>
+          <a href="#" class="cta-btn">Book Now</a>
+        </div>
+
+        <div class="package">
+          <img src="pictures/Overwater Bungalows in the Maldives.jpg" alt="Maldives">
+          <h3>Maldives Escape</h3>
+          <p>Relax in an overwater villa and enjoy the clear blue waters of the Maldives.</p>
+          <p class="price">$2,500 per person</p>
+          <a href="#" class="cta-btn">Book Now</a>
+        </div>
+
+        <div class="package">
+          <img src="pictures/_Discover Tanzania's Hidden Gem_ Arusha National Park Adventure Awaits! 🦒🌿_.jpg" alt="African Safari">
+          <h3>African Safari</h3>
+          <p>Explore the wild landscapes of Africa with guided safaris and luxury camps.</p>
+          <p class="price">$3,000 per person</p>
+          <a href="#" class="cta-btn">Book Now</a>
+        </div>
+
+        <div class="package">
+          <img src="pictures/Japan Landscape - Cherry Blossoms & Mt_ Fuji_ Serene Japan.jpg" alt="Japan Tour">
+          <h3>Japan Discovery</h3>
+          <p>Experience the mix of tradition and modernity with a 7-day tour across Tokyo and Kyoto.</p>
+          <p class="price">$1,800 per person</p>
+          <a href="#" class="cta-btn">Book Now</a>
+        </div>
+
+        <div class="package">
+          <img src="pictures/Beaches in Bali, Indonesia.jpg" alt="Bali, Indonesia">
+          <h3>Tropical Bali</h3>
+          <p>Enjoy the serene beaches and vibrant culture of Bali with our exclusive package.</p>
+          <p class="price">$1,500 per person</p>
+          <a href="#" class="cta-btn">Book Now</a>
+        </div>
+
+        <div class="package">
+          <img src="pictures/Xeg-1XNZ.jpg" alt="New York City">
+          <h3>New York Explorer</h3>
+          <p>Discover the energy of the Big Apple with our ultimate city tour package.</p>
+          <p class="price">$1,300 per person</p>
+          <a href="#" class="cta-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div class="footer-nav">
+      <a href="index.html">Home</a> |
+      <a href="destinations.html">Destinations</a> |
+      <a href="about.html">About Us</a> |
+      <a href="blog.html">Blog</a> |
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <p>&copy; 2025 TravelX. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

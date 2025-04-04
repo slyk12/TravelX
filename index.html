@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TravelX - Discover Your Next Adventure</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <style>
+    :root {
+      --primary-color: #ff7b00;
+      --hover-color: #ff4d00;
+      --bg-light: #f4f4f4;
+      --bg-dark: #222;
+      --text-dark: #333;
+      --font-main: 'Arial', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-main);
+      line-height: 1.6;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--text-dark);
+    }
+
+    #main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+
+    #main-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      font-size: 1.125rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .cta-btn {
+      padding: 0.8rem 2rem;
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 1.125rem;
+      font-weight: bold;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-btn:hover {
+      background-color: var(--hover-color);
+      transform: scale(1.1);
+    }
+
+    #hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-slideshow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: fade 15s infinite;
+    }
+
+    .hero-image:nth-child(1) { animation-delay: 0s; }
+    .hero-image:nth-child(2) { animation-delay: 5s; }
+    .hero-image:nth-child(3) { animation-delay: 10s; }
+
+    @keyframes fade {
+      0%, 60%, 100% { opacity: 0; }
+      20%, 40% { opacity: 1; }
+    }
+
+    .hero-content {
+      z-index: 1;
+      padding: 1rem;
+    }
+
+    #hero h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.7);
+    }
+
+    #hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 0.063rem 0.063rem 0.188rem rgba(0, 0, 0, 0.6);
+    }
+
+    section {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    #destinations h2,
+    #packages h2,
+    #testimonials h2 {
+      font-size: 2.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .destinations-container,
+    .packages-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .destination,
+    .package {
+      background: white;
+      border-radius: 0.5rem;
+      width: 28%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .destination:hover,
+    .package:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.2);
+    }
+
+    .destination img,
+    .package img {
+      width: 100%;
+      height: 18.75rem;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+
+    .destination p,
+    .package p {
+      margin: 1rem 0;
+      font-size: 1.125rem;
+    }
+
+    .destination a,
+    .package a {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .destination a:hover,
+    .package a:hover {
+      color: green;
+    }
+
+    .testimonial {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    #main-footer {
+      background: var(--bg-dark);
+      color: white;
+      padding: 2.5rem 1rem;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 75rem;
+      margin: auto;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 15rem;
+      margin: 1rem;
+    }
+
+    .footer-column h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-column p,
+    .footer-links {
+      font-size: 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links a {
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .social-icons a {
+      color: white;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--primary-color);
+      transform: scale(1.2);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.25rem;
+      font-size: 0.875rem;
+      background: #111;
+    }
+
+    @media (max-width: 768px) {
+      .destination, .package {
+        width: 80%;
+      }
+
+      #hero h2 {
+        font-size: 2.25rem;
+      }
+
+      #hero p {
+        font-size: 1.25rem;
+      }
+
+      .cta-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="main-header">
+    <div class="container">
+      <a href="#" class="logo">TravelX</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </nav>
+      <a href="destinations.html" class="cta-btn">Book Now</a>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="hero-slideshow">
+      <div class="hero-image" style="background-image: url(pictures/greece.jpg);"></div>
+      <div class="hero-image" style="background-image: url(pictures/Maldives.jpg);"></div>
+      <div class="hero-image" style="background-image: url(pictures/water-fall.jpg);"></div>
+    </div>
+    <div class="hero-content">
+      <h2>Discover Your Next Adventure</h2>
+      <p>Book your dream vacation today!</p>
+      <a href="#packages" class="cta-btn">Explore Packages</a>
+    </div>
+  </section>
+
+  <section id="destinations">
+    <h2>Featured Destinations</h2>
+    <div class="destinations-container">
+      <div class="destination">
+        <img src="pictures/paris.jpg" alt="Paris" />
+        <p>Explore the romantic city of Paris.</p>
+        <a href="destinations.html">Learn More</a>
+      </div>
+      <div class="destination">
+        <img src="pictures/Maldives.jpg" alt="Maldives" />
+        <p>Relax on the pristine beaches of Maldives.</p>
+        <a href="destinations.html">Learn More</a>
+      </div>
+      <div class="destination">
+        <img src="pictures/mount fuji.jpg" alt="Tokyo" />
+        <p>Experience the vibrant culture of Tokyo.</p>
+        <a href="destinations.html">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages">
+    <h2>Our Travel Packages</h2>
+    <div class="packages-container">
+      <div class="package">
+        <img src="pictures/family.jpg" alt="Family Getaway" />
+        <h3>Family Getaway</h3>
+        <p>Perfect for family vacations with fun activities for all ages.</p>
+        <a href="packages.html">Learn More</a>
+      </div>
+      <div class="package">
+        <img src="pictures/Adventure.jpg" alt="Adventure Tour" />
+        <h3>Adventure Tour</h3>
+        <p>For those who love outdoor adventure and exploration.</p>
+        <a href="packages.html">Learn More</a>
+      </div>
+      <div class="package">
+        <img src="pictures/multi.jpg" alt="Island Escape" />
+        <h3>Island Escape</h3>
+        <p>Enjoy the ultimate island getaway.</p>
+        <a href="packages.html">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial">
+      <p>"Best vacation ever! The trip was well-organized and unforgettable!"</p>
+      <p><strong>- Sarah J.</strong></p>
+    </div>
+    <div class="testimonial">
+      <p>"The Maldives package was fantastic! Beautiful beaches and seamless service."</p>
+      <p><strong>- Michael T.</strong></p>
+    </div>
+  </section>
+
+  <footer id="main-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>About Us</h3>
+        <p>Explore the world with our exclusive travel packages and expert guidance.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="blog.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="tips.html">Travel Tips</a></li>
+          <li><a href="offers.html">Special Offers</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <p>Email: info@travelagency.com</p>
+        <p>Phone: +256 456 789</p>
+        <p>Address: Travel St, Kampala, Uganda</p>
+      </div>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 TravelX. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

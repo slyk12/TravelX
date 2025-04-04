@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease-in-out;
+            font-size: 1rem; /* Base font size */
+        }
+
+        /* Header */
+        .header {
+            background: #007bff;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 75rem; /* Set max-width with rem */
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2rem; /* Scalable font size */
+        }
+
+        /* Filters */
+        .filters {
+            margin-bottom: 1.25rem;
+        }
+
+        .filter-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.625rem 1rem;
+            margin: 0.5rem;
+            cursor: pointer;
+            border-radius: 0.3125rem;
+            transition: transform 0.2s ease, background 0.3s;
+        }
+
+        .filter-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .blog-post {
+            background: white;
+            padding: 1rem;
+            border-radius: 0.3125rem;
+            box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+            width: 18.75rem; /* 300px in rem */
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .blog-post:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: 11.25rem; /* 180px in rem */
+            object-fit: cover;
+            border-radius: 0.3125rem;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-post img:hover {
+            transform: scale(1.05);
+        }
+
+        .blog-post h3 {
+            margin: 0.625rem 0;
+            color: #333;
+            font-size: 1.125rem; /* Scalable font size */
+        }
+
+        .blog-post p {
+            font-size: 0.875rem; /* Scalable font size */
+            color: #666;
+        }
+
+        .blog-meta {
+            font-size: 0.75rem;
+            color: #999;
+            margin-bottom: 0.625rem;
+        }
+
+        /* Load More Button */
+        .load-more {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.25rem;
+            margin-top: 1.25rem;
+            cursor: pointer;
+            border-radius: 0.3125rem;
+            transition: transform 0.2s ease, background 0.3s;
+        }
+
+        .load-more:hover {
+            background-color: #218838;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .footer a {
+            color: #f9f9f9;
+            text-decoration: none;
+            margin: 0 0.625rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">Travel Blog</div>
+    
+    <div class="container">
+        <h1>Explore Exciting Travel Stories</h1>
+        <p>Read about incredible travel experiences, tips, and hidden gems worldwide!</p>
+    
+        <!-- Filters -->
+        <div class="filters">
+            <button class="filter-btn" onclick="filterPosts('all')">All</button>
+            <button class="filter-btn" onclick="filterPosts('adventure')">Adventure</button>
+            <button class="filter-btn" onclick="filterPosts('luxury')">Luxury</button>
+            <button class="filter-btn" onclick="filterPosts('budget')">Budget Travel</button>
+            <button class="filter-btn" onclick="filterPosts('culture')">Culture</button>
+        </div>
+    
+        <!-- Blog Grid -->
+        <div class="blog-grid" id="blogGrid">
+            <!-- Blog posts will be inserted dynamically -->
+        </div>
+    
+        <button class="load-more" onclick="loadMorePosts()">Load More</button>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2025 Travel Agency | <a href="index.html">Back Home</a> | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a>
+    </div>
+    
+    <script>
+        const blogPosts = [
+            { id: 1, title: "Exploring the Amazon Rainforest", category: "adventure", image: "pictures/How to visit the Amazon rainforest from Brazil, Peru, and Ecuador - Tripadvisor.jpg", author: "John Doe", date: "March 20, 2025", description: "A journey deep into the heart of the Amazon." },
+            { id: 2, title: "Luxury Resorts in Maldives", category: "luxury", image: "pictures/Maldives Islands.jpg", author: "Sarah Lee", date: "March 18, 2025", description: "Top luxury destinations for an unforgettable vacation." },
+            { id: 3, title: "Backpacking Across Europe", category: "budget", image: "pictures/The Best Road Trip Routes Across Europe.jpg", author: "Emily Stone", date: "March 15, 2025", description: "How to travel Europe on a budget and still have fun!" },
+            { id: 4, title: "Cultural Wonders of Japan", category: "culture", image: "pictures/Yokohama 🇯🇵 横濱 中華街.jpg", author: "Michael Smith", date: "March 10, 2025", description: "Exploring the rich traditions and history of Japan." },
+            { id: 5, title: "Hiking the Swiss Alps", category: "adventure", image: "pictures/Grindelwald Travel Tips_ Guide to Hiking Bachalpsee.jpg", author: "Alex Johnson", date: "March 5, 2025", description: "An ultimate guide to hiking in Switzerland." },
+            { id: 6, title: "Affordable Island Getaways", category: "budget", image: "pictures/Island Getaways_ Beautiful and Remote Islands to Visit.jpg", author: "Lisa Brown", date: "March 1, 2025", description: "Budget-friendly islands that feel like paradise." },
+        ];
+    
+        let visiblePosts = 4;
+    
+        function loadPosts(limit) {
+            const grid = document.getElementById("blogGrid");
+            grid.innerHTML = "";
+            let displayed = 0;
+    
+            blogPosts.slice(0, limit).forEach(post => {
+                const postDiv = document.createElement("div");
+                postDiv.classList.add("blog-post");
+                postDiv.setAttribute("data-category", post.category);
+                postDiv.innerHTML = `
+                    <img src="${post.image}" alt="${post.title}">
+                    <div class="blog-meta">${post.author} | ${post.date}</div>
+                    <h3>${post.title}</h3>
+                    <p>${post.description}</p>
+                `;
+                grid.appendChild(postDiv);
+                displayed++;
+            });
+    
+            document.querySelector(".load-more").style.display = displayed < blogPosts.length ? "block" : "none";
+        }
+    
+        function loadMorePosts() {
+            visiblePosts += 2;
+            loadPosts(visiblePosts);
+        }
+    
+        function filterPosts(category) {
+            const posts = document.querySelectorAll(".blog-post");
+            posts.forEach(post => {
+                if (category === "all" || post.getAttribute("data-category") === category) {
+                    post.style.display = "block";
+                } else {
+                    post.style.display = "none";
+                }
+            });
+        }
+    
+        loadPosts(visiblePosts);
+    </script>
+    
+</body>
+</html>

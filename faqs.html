@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQs | TravelX</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-nav {
+      text-align: center;
+      padding: 1rem 0;
+      background: #f0f0f0;
+      font-size: 1rem;
+    }
+
+    .page-nav a {
+      color: #333;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+
+    .page-nav a:hover {
+      color: #ff7b00;
+    }
+
+    #faqs {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    #faqs h2 {
+      font-size: 2.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-container {
+      max-width: 80rem;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 1.25rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .faq-question:hover {
+      color: #ff7b00;
+    }
+
+    .faq-answer {
+      font-size: 1rem;
+      color: #555;
+      display: none;
+      padding-top: 0.625rem;
+    }
+
+    .faq-answer.show {
+      display: block;
+    }
+
+    .cta-btn {
+      padding: 1rem 2rem;
+      background-color: #ff7b00;
+      color: white;
+      font-size: 1.125rem;
+      font-weight: bold;
+      border-radius: 0.3125rem;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 2rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #ff4d00;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 0;
+      background: #222;
+      color: white;
+    }
+    
+    .footer-nav {
+      font-size: 1rem;
+    }
+    
+    .footer-nav a {
+      color: #ff7b00;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    .footer-nav a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      #faqs {
+        padding: 2rem 1rem;
+      }
+
+      #faqs h2 {
+        font-size: 1.875rem;
+      }
+
+      .faq-container {
+        padding: 1.5rem;
+      }
+
+      .cta-btn {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="page-nav">
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="packages.html">Packages</a>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+    </nav>
+
+  <section id="faqs">
+    <div class="faq-container">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">What destinations do you offer?</div>
+        <div class="faq-answer">
+          We offer a wide variety of destinations worldwide, from popular tourist spots to hidden gems. You can check out our destinations page for a full list.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I book a trip?</div>
+        <div class="faq-answer">
+          You can book a trip by visiting our packages page, choosing your preferred package, and following the easy steps to book.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Are there any special offers or discounts available?</div>
+        <div class="faq-answer">
+          Yes! We have exclusive discounts and offers throughout the year. Please visit our Special Offers page to learn more.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Do you offer group discounts?</div>
+        <div class="faq-answer">
+          Yes, we offer special group rates for larger parties. Please contact our customer support for more details.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What is the cancellation policy?</div>
+        <div class="faq-answer">
+          Our cancellation policy varies depending on the package. Please refer to the specific terms and conditions on the package page or contact us for more information.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can I customize my trip?</div>
+        <div class="faq-answer">
+          Yes, we offer customized trips to suit your preferences. You can contact our support team for assistance in planning your perfect trip.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What is included in the price of the package?</div>
+        <div class="faq-answer">
+          The price of each package includes accommodation, transportation, meals, and guided tours. However, optional activities and personal expenses are not included.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I contact customer support?</div>
+        <div class="faq-answer">
+          You can contact us through our Contact Us page or directly email us at info@travelx.com. Our support team is available 24/7 to assist you.
+        </div>
+      </div>
+
+      <a href="contact.html" class="cta-btn">Contact Us for More Questions</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-nav">
+      <a href="index.html">Home</a> |
+      <a href="destinations.html">Destinations</a> |
+      <a href="packages.html">Packages</a> |
+      <a href="about.html">About Us</a> |
+      <a href="blog.html">Blog</a>
+    </div>
+    <p>&copy; 2025 TravelX. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+        const answer = item.nextElementSibling;
+        answer.classList.toggle('show');
+      });
+    });
+  </script>
+</body>
+</html>
